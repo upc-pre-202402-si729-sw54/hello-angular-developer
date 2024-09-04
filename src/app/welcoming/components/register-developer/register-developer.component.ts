@@ -1,4 +1,4 @@
-import {Component, EventEmitter} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from "@angular/forms";
 
 @Component({
@@ -17,6 +17,7 @@ export class RegisterDeveloperComponent {
     lastName: new FormControl('')
   });
 
+  @Output()
   developerRegistered = new EventEmitter<{firstName: string, lastName: string}>();
 
   myOnSubmit() {
